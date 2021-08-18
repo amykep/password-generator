@@ -1,4 +1,4 @@
-# password-generator:Third Week Challenge
+# password-generator: Third Week Challenge
 
 ## Steps to solve this week challenge:
  1. Created variable for every password criteria. 
