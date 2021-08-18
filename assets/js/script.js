@@ -90,19 +90,27 @@ let generatePassword = function ()
       switch (passwordCharacterPrompt)
       {
         case 1:
-          window.alert("Your password will include lowercase characters");
+          window.alert("Your password will include only lowercase characters")
+          passwordCriteria.lowercaseLetter = true
+          console.log("passwordCriteria.lowercaseLetter: " + passwordCriteria.lowercaseLetter)
           break;
 
         case 2:
-          window.alert("Your password will include uppercase characters")
+          window.alert("Your password will include only uppercase characters")
+          passwordCriteria.uppercaseLetter = true
+          console.log("passwordCriteria.uppercaseLetter: " + passwordCriteria.uppercaseLetter)
           break;
 
         case 3:
-          window.alert("Your password will include numeric characters")
+          window.alert("Your password will include only numeric characters")
+          passwordCriteria.numericNumber = true
+          console.log("passwordCriteria.numericNumber: " + passwordCriteria.numericNumber)
           break;
 
         case 4:
-          window.alert("Your password will include special characters")
+          window.alert("Your password will include only special characters")
+          passwordCriteria.specialCharacter = true
+          console.log("passwordCriteria.specialCharacter: " + passwordCriteria.specialCharacter)
           break;
 
         default:
