@@ -28,9 +28,6 @@ let generatePassword = function ()
     else
     {
       window.alert("Your password length will randomly be set betwee 8 and 128 character");
-      prefLength = Math.floor(Math.random() * 9 + 8);
-      console.log("Preffered password length: " + prefLength);
-      return prefLength;
     }
   };
 
@@ -119,85 +116,8 @@ let generatePassword = function ()
     }
 
   }
-
   passwordCriteriaValidation();
-
-
-  // Empty minimums for numbers, lowerCases, upperCases & specialCharacters
-  let minimumCount = 0;
-  let minimumNumbers = "";
-  let minimumLowerCases = "";
-  let minimumUpperCases = "";
-  let minimumSpecialCharacters = "";
-  const specialCharacters = "!@#$%^&*()";
-
-
-  // Generator functions**
-  let functionArray = {
-    getNumbers: function ()
-    {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-    },
-
-    getLowerCases: function ()
-    {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
-    },
-
-    getUpperCases: function ()
-    {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
-    },
-
-    getSpecialCharacters: function ()
-    {
-      return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-    }
-
-  };
-
-  // empty string for loop below
-  let randomPasswordGenerated = "";
-
-  // loop getting random characters
-  while (minimumCount < prefLength)
-  {
-    let randomNumberPicked = Math.floor(Math.random() * 4);
-
-    // randomPasswordGenerated += randomNumberPicked;
-    if (passwordCriteria.numericNumber === true && randomNumberPicked === 0)
-    {
-      randomPasswordGenerated += functionArray.getNumbers();
-      minimumCount++;
-    }
-
-    if (passwordCriteria.lowercaseLetter === true && randomNumberPicked === 1)
-    {
-      randomPasswordGenerated += functionArray.getLowerCases();
-      minimumCount++;
-
-    }
-
-    if (passwordCriteria.uppercaseLetter === true && randomNumberPicked === 2)
-    {
-      randomPasswordGenerated += functionArray.getUpperCases();
-      minimumCount++;
-
-    }
-
-    if (passwordCriteria.specialCharacter === true && randomNumberPicked === 3)
-    {
-      randomPasswordGenerated += functionArray.getSpecialCharacters();
-      minimumCount++;
-
-    }
-  }
-
-  console.log("randomPasswordGenerated: " + randomPasswordGenerated)
-  return randomPasswordGenerated;
-
-}
-
+};
 
 // Get references to the #generate element
 let generateBtn = document.querySelector("#generate");
@@ -214,3 +134,4 @@ function writePassword()
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
